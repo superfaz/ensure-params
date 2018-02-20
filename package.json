@@ -1,0 +1,34 @@
+{
+  "name": "ensure-params",
+  "version": "0.0.1",
+  "description": "Provide simple checks of method parameters on NodeJS",
+  "author": "Francois Karman",
+  "license": "MIT",
+  "keywords": [
+    "assert",
+    "ensure"
+  ],
+  "homepage": "https://github.com/superfaz/ensure-params#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superfaz/ensure-params.git"
+  },
+  "bugs": {
+    "url": "https://github.com/superfaz/ensure-params/issues"
+  },
+  "scripts": {
+    "pretest": "standard",
+    "test": "mocha",
+    "coverage": "nyc --reporter=text mocha",
+    "doc": "jsdoc -c .jsdoc.json"
+  },
+  "main": "src/ensure.js",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.0.0",
+    "nyc": "^11.4.1",
+    "postman-jsdoc-theme": "0.0.3",
+    "standard": "^10.0.3"
+  }
+}
