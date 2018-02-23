@@ -52,6 +52,50 @@ class Checker {
   }
 
   /**
+   * Ensures that the parameter is a string.
+   */
+  isString () {
+    if (this.paramType !== 'string') {
+      this.raiseOptionalError(`is not a string (current value: ${this.paramValue})`)
+    }
+  }
+
+  /**
+   * Ensures that the parameter is a number.
+   *
+   * Infinites values are excluded by default.
+   */
+  isNumber () {
+    if (this.paramType !== 'number' ||
+        this.paramValue === Number.POSITIVE_INFINITY ||
+        this.paramValue === Number.NEGATIVE_INFINITY) {
+      this.raiseOptionalError(`is not a number (current value: ${this.paramValue})`)
+    }
+  }
+
+  /**
+   * Ensures that the parameter is an integer.
+   */
+  isInteger () {
+    if (this.paramType !== 'number' || this.paramValue % 1 !== 0) {
+      this.raiseOptionalError(`is not an integer (current value: ${this.paramValue})`)
+    }
+  }
+
+  /**
+   * Raises the error and build the error message, if the value of the parameter
+   * is different from `undefined` and `null`.
+   *
+   * @private
+   * @param {string} endMessage The end of the error message.
+   */
+  raiseOptionalError (endMessage) {
+    if (this.paramValue !== undefined && this.paramValue !== null) {
+      throw new ParameterError(`The parameter '${this.paramName}' ${endMessage}`)
+    }
+  }
+
+  /**
    * Raises the error and build the error message.
    *
    * @private
