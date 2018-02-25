@@ -20,7 +20,8 @@
     "pretest": "standard",
     "test": "mocha",
     "coverage": "nyc --reporter=text mocha",
-    "doc": "jsdoc -c .jsdoc.json"
+    "doc": "jsdoc -c .jsdoc.json",
+    "preversion": "npm test"
   },
   "main": "src/ensure.js",
   "devDependencies": {

@@ -1,6 +1,6 @@
 # ensure-params
 
-Provide simple checks of method parameters on NodeJS
+Provide simple checks for method / function parameters.
 
 ## installation
 
@@ -12,11 +12,16 @@ Provide simple checks of method parameters on NodeJS
 const ensure = require('ensure-params')
 
 class HelloSomeone {
-    print (name) {
-        ensure.param('name', name)
-            .isRequired()
-            .isString()
-        console.write('Hello ' + name)
-    }
+  static print (name) {
+    ensure.param('name', name)
+      .isRequired()
+      .isString()
+    console.write('Hello ' + name)
+  }
 }
+
+HelloSomeone.print('test') // will succeed
+HelloSomeone.print() // will fail and throws an error
+HelloSomeone.print(null) // will fail and throws an error
+HelloSomeone.print(1) // will fail and throws an error
 ```
