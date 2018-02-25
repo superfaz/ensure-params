@@ -16,7 +16,7 @@ class HelloSomeone {
     ensure.param('name', name)
       .isRequired()
       .isString()
-    console.write('Hello ' + name)
+    console.log('Hello ' + name)
   }
 }
 

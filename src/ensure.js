@@ -1,6 +1,6 @@
 'use strict'
 
-const Checker = require('checker')
+const Checker = require('./checker')
 
 module.exports = {
   param (paramName, paramValue) {

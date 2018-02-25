@@ -57,7 +57,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.defined) {
-          instance.isDefined()
+          assert.strictEqual(instance.isDefined(), instance)
         } else {
           assert.throw(() => instance.isDefined(), /The parameter 'name' should be defined/)
         }
@@ -70,7 +70,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.assigned) {
-          instance.isAssigned()
+          assert.strictEqual(instance.isAssigned(), instance)
         } else {
           assert.throw(() => instance.isAssigned(), /The parameter 'name' should be assigned/)
         }
@@ -83,7 +83,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.required) {
-          instance.isRequired()
+          assert.strictEqual(instance.isRequired(), instance)
         } else {
           assert.throw(() => instance.isRequired(), /The parameter 'name' is required/)
         }
@@ -96,7 +96,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.string) {
-          instance.isString()
+          assert.strictEqual(instance.isString(), instance)
         } else {
           assert.throw(() => instance.isString(), /The parameter 'name' is not a string \(current value: .*\)/)
         }
@@ -109,7 +109,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.number) {
-          instance.isNumber()
+          assert.strictEqual(instance.isNumber(), instance)
         } else {
           assert.throw(() => instance.isNumber(), /The parameter 'name' is not a number \(current value: .*\)/)
         }
@@ -122,7 +122,7 @@ describe('Checker', function () {
       it('correctly manage ' + test.value, function () {
         var instance = new Checker('name', test.value)
         if (test.integer) {
-          instance.isInteger()
+          assert.strictEqual(instance.isInteger(), instance)
         } else {
           assert.throw(() => instance.isInteger(), /The parameter 'name' is not an integer \(current value: .*\)/)
         }
